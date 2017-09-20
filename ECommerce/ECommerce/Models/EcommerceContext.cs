@@ -6,8 +6,10 @@ namespace ECommerce.Models
     {
         public EcommerceContext() : base("DefaultConnection")
         {
-
-
         }
+        public DbSet<Departaments> Departaments { get; set; }
+
+
+
     }
 }
