@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ECommerce.Models;
+using ECommerce.Classes;
 
 namespace ECommerce.Controllers
 {
@@ -39,7 +40,9 @@ namespace ECommerce.Controllers
         // GET: Cities/Create
         public ActionResult Create()
         {
-            ViewBag.DepartamentsId = new SelectList(db.Departaments, "DepartamentsId", "Name");
+            
+
+            ViewBag.DepartamentsId = new SelectList(CombosHelper.GetDepartaments(), "DepartamentsId", "Name");
             return View();
         }
 
@@ -57,7 +60,7 @@ namespace ECommerce.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DepartamentsId = new SelectList(db.Departaments, "DepartamentsId", "Name", city.DepartamentsId);
+            ViewBag.DepartamentsId = new SelectList(CombosHelper.GetDepartaments(), "DepartamentsId", "Name", city.DepartamentsId);
             return View(city);
         }
 
