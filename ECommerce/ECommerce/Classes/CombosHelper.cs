@@ -22,7 +22,7 @@ namespace ECommerce.Classes
         }
         public void Dispose()
         {
-            throw new NotImplementedException();
+            db.Dispose();
         }
     }
 }

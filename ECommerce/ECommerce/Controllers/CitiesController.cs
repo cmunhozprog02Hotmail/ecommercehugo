@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using ECommerce.Models;
 using ECommerce.Classes;
@@ -76,7 +72,7 @@ namespace ECommerce.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.DepartamentsId = new SelectList(db.Departaments, "DepartamentsId", "Name", city.DepartamentsId);
+            ViewBag.DepartamentsId = new SelectList(CombosHelper.GetDepartaments(), "DepartamentsId", "Name", city.DepartamentsId);
             return View(city);
         }
 
@@ -93,7 +89,7 @@ namespace ECommerce.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.DepartamentsId = new SelectList(db.Departaments, "DepartamentsId", "Name", city.DepartamentsId);
+            ViewBag.DepartamentsId = new SelectList(CombosHelper.GetDepartaments(), "DepartamentsId", "Name", city.DepartamentsId);
             return View(city);
         }
 
