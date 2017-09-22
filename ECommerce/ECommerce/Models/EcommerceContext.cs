@@ -28,5 +28,6 @@ namespace ECommerce.Models
             base.OnModelCreating(modelBuilder);
         }
 
+        public System.Data.Entity.DbSet<ECommerce.Models.City> Cities { get; set; }
     }
 }
