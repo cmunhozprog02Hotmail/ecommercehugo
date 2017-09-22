@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ECommerce.Models
 {
@@ -10,6 +11,7 @@ namespace ECommerce.Models
         public int DepartamentsId { get; set; }
 
         [Required(ErrorMessage="O Campo Nome é requerido!")]
+        [Index("Departaments_Name_Index", IsUnique = true)]
         [Display(Name = "Nome")]
         public string Name { get; set; }
 
