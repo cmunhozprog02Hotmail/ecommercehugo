@@ -31,6 +31,14 @@ namespace ECommerce.Models
         [DataType(DataType.ImageUrl)]
         public string Logo { get; set; }
 
+        [Required(ErrorMessage = "O Campo Departamento é requerido!")]
+        [Display(Name = "Departamento")]
+        public int DepartamentsId { get; set; }
+
+        [Required(ErrorMessage = "O Campo Cidade é requerido!")]
+        [Display(Name = "Cidade")]
+        public int CityId { get; set; }
+
         public virtual Departaments Departaments { get; set; }
 
         public virtual City Cities { get; set; }
