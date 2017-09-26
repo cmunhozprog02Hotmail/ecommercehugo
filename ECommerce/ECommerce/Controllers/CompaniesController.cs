@@ -11,6 +11,16 @@ namespace ECommerce.Controllers
     {
         private EcommerceContext db = new EcommerceContext();
 
+        //Controle de list view wm cascata
+        
+        public JsonResult GetCities(int departments)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var cities = db.Cities.Where(c => c.DepartamentsId == departments);
+            return Json(cities);
+        }
+
+
         // GET: Companies
         public ActionResult Index()
         {
